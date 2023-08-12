@@ -5,7 +5,7 @@ let song;
 
 function preload() {
   soundFormats("mp3");
-  song = loadSound("https://bestringtoness.com/download/1836/mp3");
+  song = loadSound("assets/flight_of_the_bumblebee");
 }
 
 function setup() {
