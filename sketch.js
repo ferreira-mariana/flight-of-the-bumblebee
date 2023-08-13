@@ -28,6 +28,7 @@ function draw() {
     fill(56, 111, 148);
     noStroke();
     text("click or press enter to play", 30, 50);
+    drawPlayButton();
   }
 }
 
@@ -66,4 +67,20 @@ function drawBee(x, y) {
   ellipse(x - 10, y - 20, 3);
   line(x + 5, y - 12, x + 10, y - 20); // left antenna
   ellipse(x + 10, y - 20, 3);
+}
+
+function drawPlayButton() {
+  const delta = width / 30;
+  const baseH = height / 2;
+  const baseW = width / 2;
+
+  x1 = baseW - (2 / 3) * delta;
+  x2 = x1;
+  x3 = baseW + delta;
+  y1 = baseH - delta;
+  y2 = baseH + delta;
+  y3 = baseH;
+
+  noStroke();
+  triangle(x1, y1, x2, y2, x3, y3);
 }
