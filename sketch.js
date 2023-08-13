@@ -11,16 +11,12 @@ function preload() {
 function setup() {
   const cnv = createCanvas(displayWidth, displayHeight);
   cnv.mousePressed(canvasPressed);
-  background(110, 180, 225);
-  fill(56, 111, 148);
   textSize(24);
-  text("tap here to play", 30, 50);
 }
 
 function draw() {
+  background(110, 180, 225);
   if (started) {
-    background(109, 179, 225);
-
     const x = map(noise(xoff1), 0, 1, 0, width);
     const y = map(noise(xoff2), 0, 1, 0, height);
 
@@ -28,12 +24,20 @@ function draw() {
     xoff2 += 0.02;
 
     drawBee(x, y);
+  } else {
+    fill(56, 111, 148);
+    noStroke();
+    text("tap here to play", 30, 50);
   }
 }
 
 function canvasPressed() {
-  started = true;
-  song.play();
+  started = !started;
+  if (started) {
+    song.play();
+  } else {
+    song.stop();
+  }
 }
 
 function drawBee(x, y) {
