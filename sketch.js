@@ -10,7 +10,7 @@ function preload() {
 
 function setup() {
   const cnv = createCanvas(windowWidth, windowHeight);
-  cnv.mousePressed(canvasPressed);
+  cnv.mousePressed(controlFlow);
   textSize(24);
 }
 
@@ -27,16 +27,22 @@ function draw() {
   } else {
     fill(56, 111, 148);
     noStroke();
-    text("tap here to play", 30, 50);
+    text("click or press enter to play", 30, 50);
   }
 }
 
-function canvasPressed() {
+function controlFlow() {
   started = !started;
   if (started) {
     song.play();
   } else {
     song.stop();
+  }
+}
+
+function keyPressed() {
+  if (keyCode === ENTER) {
+    controlFlow();
   }
 }
 
