@@ -9,7 +9,7 @@ function preload() {
 }
 
 function setup() {
-  const cnv = createCanvas(displayWidth, displayHeight);
+  const cnv = createCanvas(windowWidth, windowHeight);
   cnv.mousePressed(canvasPressed);
   textSize(24);
 }
