@@ -11,7 +11,7 @@ function preload() {
 function setup() {
   const cnv = createCanvas(windowWidth, windowHeight);
   cnv.mousePressed(controlFlow);
-  textSize(height/15);
+  textSize(width / 10);
 }
 
 function draw() {
