@@ -11,7 +11,7 @@ function preload() {
 function setup() {
   const cnv = createCanvas(windowWidth, windowHeight);
   cnv.mousePressed(controlFlow);
-  textSize(24);
+  textSize(height/26);
 }
 
 function draw() {
@@ -27,7 +27,7 @@ function draw() {
   } else {
     fill(56, 111, 148);
     noStroke();
-    text("click or press enter to play", 30, 50);
+    text("click or press enter to play", 50, 50, width - 100, height - 100);
     drawPlayButton();
   }
 }
