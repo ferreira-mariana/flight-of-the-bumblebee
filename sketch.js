@@ -1,4 +1,4 @@
-const maxLevel = 10;
+const maxLevel = 3;
 const states = {
   initial: 0,
   playing: 1,
@@ -75,7 +75,7 @@ function draw() {
 }
 
 function startGame() {
-  if (state !== state.playing && !song.isPlaying()) {
+  if (state !== states.playing && !song.isPlaying()) {
     lvl = 1;
     state = states.playing;
     song.setLoop(true);
