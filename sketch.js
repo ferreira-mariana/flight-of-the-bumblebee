@@ -1,4 +1,4 @@
-const maxLevel = 3;
+const maxLevel = 10;
 const states = {
   initial: 0,
   playing: 1,
