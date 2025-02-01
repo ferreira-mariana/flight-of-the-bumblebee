@@ -38,7 +38,7 @@ function draw() {
     xoff1 += 0.002 * lvl;
     xoff2 += 0.002 * lvl;
 
-    bee.drawBee(x, y);
+    bee.draw(x, y);
 
     push();
     fill(56, 111, 148);
@@ -51,7 +51,6 @@ function draw() {
       width - 60,
       height - 60
     );
-    textSize(14);
     text(`press esq to stop`, 30, height - 30, width - 60, height - 60);
     pop();
   } else if (state === states.end) {
@@ -61,8 +60,8 @@ function draw() {
     textSize(60);
     textAlign(CENTER, CENTER);
     text("YOU WON!", width / 2, height / 2);
-    textSize(16);
-    text(`click or press enter to play again`, width / 2, height - 30);
+    textSize(20);
+    text(`press esq to restart`, width / 2, height - 60);
     pop();
   } else {
     push();
@@ -75,7 +74,7 @@ function draw() {
 }
 
 function startGame() {
-  if (state !== states.playing && !song.isPlaying()) {
+  if (state === states.initial && !song.isPlaying()) {
     lvl = 1;
     state = states.playing;
     song.setLoop(true);

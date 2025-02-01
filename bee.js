@@ -5,7 +5,7 @@ class Bee {
     this.radius = 60;
   }
 
-  drawBee(x, y) {
+  draw(x, y) {
     this.x = x;
     this.y = y;
 
